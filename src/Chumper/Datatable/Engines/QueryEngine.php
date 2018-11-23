@@ -164,8 +164,10 @@ class QueryEngine extends BaseEngine {
     }
     private function buildSearchQuery($builder, $columns)
     {
-        if (method_exists($builder, 'scopeSearch')) {
-            $builder = $builder->newQuery()->search($this->search);
+        $model = ($builder instanceof \Illuminate\Database\Eloquent\Builder) ? $builder->getModel() : clone $builder;
+
+        if (method_exists($model, 'scopeSearch')) {
+            $builder = $model->newQuery()->search($this->search);
         } else {
             $like = $this->options['searchOperator'];
             $search = $this->search;

@@ -274,7 +274,9 @@ abstract class BaseEngine {
     }
 
     /**
-     * @param $function Set a function for a dynamic row class
+     * Set a function for a dynamic row class
+     * 
+     * @param $function
      * @return $this
      */
     public function setRowClass($function)
@@ -284,7 +286,9 @@ abstract class BaseEngine {
     }
 
     /**
-     * @param $function Set a function for a dynamic row id
+     * Set a function for a dynamic row id
+     * 
+     * @param $function
      * @return $this
      */
     public function setRowId($function)
@@ -294,7 +298,9 @@ abstract class BaseEngine {
     }
 
     /**
-     * @param $function Set a function for dynamic html5 data attributes
+     * Set a function for dynamic html5 data attributes
+     * 
+     * @param $function
      * @return $this
      */
     public function setRowData($function)
@@ -314,9 +320,11 @@ abstract class BaseEngine {
         $this->exactWordSearch = $value;
         return $this;
     }
-    
+
     /**
-     * @param $columnNames Sets up a lookup table for which columns should use exact matching -sburkett
+     * Sets up a lookup table for which columns should use exact matching -sburkett
+     * 
+     * @param $columnNames
      * @return $this
      */
     public function setExactMatchColumns($columnNames)
